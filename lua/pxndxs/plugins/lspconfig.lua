@@ -3,7 +3,7 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
   },
-  event = "VeryLazy",
+  event = 'VeryLazy',
   config = function ()
     local opts = { noremap = true, silent = true }
     vim.keymap.set( 'n', '<space>e', vim.diagnostic.open_float, opts )
@@ -58,7 +58,7 @@ return {
           runtime = { version = 'LuaJIT', },
           diagnostics = { globals = { 'vim' }, },
           workspace = {
-            library = vim.api.nvim_get_runtime_file( "", true ),
+            library = vim.api.nvim_get_runtime_file( '', true ),
             checkThirdParty = false,
           },
           telemetry = { enable = false, },
@@ -69,9 +69,9 @@ return {
     require( 'mason' ).setup({
       ui = {
         icons = {
-          package_installed = "✓",
-          package_pending = "🕐",
-          package_uninstalled = "❌"
+          package_installed = '✓',
+          package_pending = '🕐',
+          package_uninstalled = '❌'
         }
       }
     })
