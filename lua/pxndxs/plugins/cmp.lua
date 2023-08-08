@@ -17,6 +17,7 @@ return {
       build = 'make instal_jsregexp',
     },
   },
+  event = 'VeryLazy',
   config = function ()
     local cmp = require( 'cmp' )
     cmp.setup({
