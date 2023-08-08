@@ -35,7 +35,7 @@ return {
     })
     local opts = { noremap = true, silent = true }
     vim.keymap.set( 'n', '<leader>hn', rest_nvim.run, opts )
-    vim.keymap.set( 'n', '<leader>hl', rest_nvim.last, opts );
-    vim.keymap.set( 'n', '<leader>hp', function () rest_nvim.run( true ) end, opts );
+    vim.keymap.set( 'n', '<leader>hl', rest_nvim.last, opts )
+    vim.keymap.set( 'n', '<leader>hp', function () rest_nvim.run( true ) end, opts )
   end
 }
