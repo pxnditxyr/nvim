@@ -3,7 +3,7 @@ return {
   build  = ':TSUpdate',
   dependencies = {
     'nvim-treesitter/playground',
-    'p00f/nvim-ts-rainbow',
+    'hiphish/rainbow-delimiters.nvim',
     'JoosepAlviste/nvim-ts-context-commentstring',
     'windwp/nvim-ts-autotag',
   },
@@ -24,7 +24,7 @@ return {
       rainbow = {
         enable = true,
         extend_mode = true,
-        colors = { '#ffd700', '#ff2442', '#04ff00', '#40e3db', '#fa6e4f', '#fdf5ca', '#ff00ff' },
+        colors = { '#ffd700', '#ff2442', '#04ff00', '#40e3db', '#fa6e4f', '#fdf5CA', '#ff00ff' },
       },
     })
   end,

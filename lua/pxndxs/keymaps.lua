@@ -40,7 +40,7 @@ vim.keymap.set( 'n', '<leader>par', 'a<Space><Esc>h%i<Space><Esc>l%', opts )
 
 -- save and quit
 vim.keymap.set( 'n', '<leader>w', ':w<CR>', opts )
-vim.keymap.set( 'n', '<leader>q', ':q<CR>', opts )
+vim.keymap.set( 'n', '<leader>v', ':q<CR>', opts )
 
 -- execute node file
 vim.keymap.set( 'n', '<leader>node', ':!node %<CR>',    opts )
