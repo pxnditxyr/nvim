@@ -21,8 +21,8 @@ vim.keymap.set( 'n', 'n', 'nzzzv', opts )
 vim.keymap.set( 'n', 'N', 'Nzzzv', opts )
 
 -- search and replace
-vim.keymap.set( 'n', '<leader>rw', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', opts )
-vim.keymap.set( 'n', '<leader>ra', ':%s///gc<Left><Left><Left><Left>', opts )
+vim.keymap.set( 'n', '<leader>fw', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', opts )
+vim.keymap.set( 'n', '<leader>fr', ':%s///gc<Left><Left><Left><Left>', opts )
 
 -- best paste
 vim.keymap.set( 'x', '<leader>p', '"_dP', opts )
@@ -43,7 +43,7 @@ vim.keymap.set( 'n', '<leader>w', ':w<CR>', opts )
 vim.keymap.set( 'n', '<leader>v', ':q<CR>', opts )
 
 -- execute node file
-vim.keymap.set( 'n', '<leader>node', ':!node %<CR>',    opts )
+vim.keymap.set( 'n', '<leader>bun', ':!bun %<CR>',    opts )
 vim.keymap.set( 'n', '<leader>py',   ':!python3 %<CR>', opts )
 
 -- split window change
