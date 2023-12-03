@@ -46,18 +46,35 @@ return {
           maxwidth = 50,
           ellipsis_char = '...',
           before = function ( entry, vim_item )
+            -- vim_item.kind = require( 'lspkind' ).presets.default[ entry.kind ]
+            -- .. ' ' .. vim_item.kind
             return vim_item
           end
         })
       },
     })
-
     cmp.setup.filetype( 'gitcommit', {
       sources = cmp.config.sources({
-        { name = 'cmp_git' },
+        { name = 'git' },
       }, {
         { name = 'buffer' },
       })
+    })
+
+    cmp.setup.cmdline({ '/', '?' }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+    })
+
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+          { name = 'cmdline' }
+        })
     })
   end
 }

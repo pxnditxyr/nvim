@@ -7,8 +7,17 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     'windwp/nvim-ts-autotag',
   },
+
   config = function ()
     local configs = require( 'nvim-treesitter.configs' )
+    require( 'ts_context_commentstring' ).setup({
+      enable_autocmd = false,
+      languages = {
+        typescript = '// %s',
+        javascript = '// %s',
+      },
+    })
+    vim.g.skip_ts_commentstring_module = true
     configs.setup({
       ensure_installed = { 'lua', 'vimdoc', 'vim', 'typescript', 'javascript', 'html', 'http', 'json' },
       ignore_install = {},
@@ -20,7 +29,6 @@ return {
       },
       indent  = { enable = true },
       autotag = { enable = true },
-      context_commentstring = { enable = true },
       rainbow = {
         enable = true,
         extend_mode = true,

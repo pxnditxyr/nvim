@@ -16,6 +16,7 @@ return {
         floats = 'dark',
       },
       sidebars = { 'qf', 'help' },
+      day_brightness = 0.3,
       lualine_bold = false,
       on_colors = function( colors )
         colors.bg_dark = '#1f2335'
