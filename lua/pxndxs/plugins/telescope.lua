@@ -32,7 +32,12 @@ return {
 
     require( 'telescope' ).load_extension( 'file_browser' )
 
-    vim.keymap.set( 'n', '<leader>ff', function() builtin.find_files( { hidden = true, find_command = { 'rg', '--files', '--hidden', '--follow', '--glob', '!.git' } } ) end, {} )
+    vim.keymap.set( 'n', '<leader>ff', function()
+      builtin.find_files({
+        hidden = true,
+        find_command = { 'rg', '--files', '--hidden', '--follow', '--glob', '!.git' }
+      })
+    end, {} )
     vim.keymap.set( 'n', '<leader>fg', builtin.live_grep, {} )
     vim.keymap.set( 'n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true } )
   end
