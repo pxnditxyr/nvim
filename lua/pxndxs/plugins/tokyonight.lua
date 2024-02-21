@@ -22,10 +22,10 @@ return {
         colors.bg_dark = '#1f2335'
         colors.bg = '#24283b'
         -- color of the current line
-        colors.bg_highlight = '#473978'
+        colors.bg_highlight = '#0f172a'
         colors.terminal_black = '#414868'
         -- normal color
-        colors.fg = '#FFDB89'
+        colors.fg = '#fde68a'
         colors.fg_dark = '#a9b1d6'
         colors.fg_gutter = '#3b4261'
         colors.dark3 = '#545c7e'
@@ -36,25 +36,25 @@ return {
         colors.blue0 = '#3d59a1'
         -- color of functions calls, methods, and some definition of variables
         colors.blue = '#0CECDD'
-        colors.cyan = '#7dcfff'
+        colors.cyan = '#0bf947'
         colors.blue1 = '#2ac3de'
         colors.blue2 = '#0db9d7'
         colors.blue5 = '#89ddff'
         colors.blue6 = '#B4F9F8'
         colors.blue7 = '#394b70'
         -- color of sentencies like if, for, while, instance of functions, etc.
-        colors.magenta = '#FF8DC7'
-        colors.magenta2 = '#ff007c'
+        colors.magenta = '#f43f5e'
+        colors.magenta2 = '#d946ef'
         -- color of return local, etc.
         colors.purple = '#FF33BB'
         colors.orange = '#ff9e64'
-        colors.yellow = '#e0af68'
-        colors.green = '#9ece6a'
-        colors.green1 = '#73daca'
-        colors.green2 = '#41a6b5'
-        colors.teal = '#1abc9c'
-        colors.red = '#f7768e'
-        colors.red1 = '#db4b4b'
+        colors.yellow = '#fde047'
+        colors.green = '#a3e635'
+        colors.green1 = '#34d399'
+        colors.green2 = '#4ade80'
+        colors.teal = '#0d9488'
+        colors.red = '#ef4444'
+        colors.red1 = '#dc2626'
         colors.git = {
           change = '#6183bb',
           add = '#449dab',

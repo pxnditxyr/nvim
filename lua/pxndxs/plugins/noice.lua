@@ -1,7 +1,7 @@
 return {
   'folke/noice.nvim',
   event = "VeryLazy",
-  opts = function(_, opts)
+  opts = function( _, opts )
     opts.commands = {
       all = {
         -- options for the message history that you get with `:Noice`
@@ -28,9 +28,9 @@ return {
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+          [ "vim.lsp.util.convert_input_to_markdown_lines" ] = true,
+          [ "vim.lsp.util.stylize_markdown" ] = true,
+          [ "cmp.entry.get_documentation" ] = true,
         },
       },
       -- you can enable a preset for easier configuration
@@ -42,5 +42,11 @@ return {
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
     })
+    vim.keymap.set( "n", "<leader>nl", function()
+      require( "noice" ).cmd( "last" )
+    end )
+    vim.keymap.set( "n", "<leader>nd", function()
+      require( "noice" ).cmd( "dismiss" )
+    end )
   end
 }

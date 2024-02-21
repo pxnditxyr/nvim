@@ -13,7 +13,8 @@ vim.opt.softtabstop = 2
 
 -- indent
 vim.opt.autoindent  = true
-vim.opt.smartindent = true
+vim.opt.cindent     = true
+vim.opt.smartindent = false
 
 -- clipboard
 vim.opt.clipboard = 'unnamedplus'

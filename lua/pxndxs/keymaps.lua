@@ -37,8 +37,9 @@ keymap.set( 'n', '<leader>', 'A<ESC>j', opts )
 keymap.set( 'n', '<leader>par', 'a<Space><Esc>h%i<Space><Esc>l%', opts )
 
 -- save and quit
+-- save and quit options must be fast to use 
 keymap.set( 'n', '<leader>w', ':w<Return>', opts )
-keymap.set( 'n', '<leader>v', ':q<Return>', opts )
+keymap.set( 'n', '<leader>z', ':q<Return>', opts )
 
 -- execute node file
 keymap.set( 'n', '<leader>bun', ':!bun %<Return>',    opts )
