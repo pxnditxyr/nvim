@@ -3,12 +3,8 @@ return {
   opts = {},
   dependencies = { 'kyazdani42/nvim-web-devicons' },
   config = function ()
-    require( 'oil' ).setup({
-
-
-    })
-    require("oil").setup({
-      default_file_explorer = false,
+    require( "oil" ).setup({
+      default_file_explorer = true,
       columns = {
         "icon",
         -- "permissions",
@@ -92,7 +88,11 @@ return {
             "yarn.lock",
             "package-lock.json",
             "pnpm-lock.yaml",
-            "postgres"
+            "postgres",
+            "mysql",
+            "sqlite",
+            "mongo",
+            "cassandra"
           }
           return vim.tbl_contains(names, name)
         end,
