@@ -57,3 +57,10 @@ keymap.set( 'n', '<C-j>', '<C-w>j', opts )
 keymap.set( 'n', '<leader>tn', ':tabnew<Return>', opts )
 keymap.set( 'n', '<tab>',      ':tabnext<Return>', opts )
 keymap.set( 'n', '<S-tab>',    ':tabprevious<Return>', opts )
+
+-- move between buffers
+keymap.set( 'n', '<leader>bn', ':bnext<Return>', opts )
+keymap.set( 'n', '<leader>bp', ':bprevious<Return>', opts )
+keymap.set( 'n', '<leader>bd', ':bd<Return>', opts )
+keymap.set( 'n', '<leader>bl', ':bl<Return>', opts )
+keymap.set( 'n', '<leader>bf', ':bf<Return>', opts )
