@@ -1,5 +1,6 @@
 return {
   'rest-nvim/rest.nvim',
+	version = '1.2.1',
   enable = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
