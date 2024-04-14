@@ -25,6 +25,73 @@ return {
     local cmp = require( 'cmp' )
 
     cmp.setup({
+      window = {
+        completion = {
+          border = "rounded",
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG",
+          scrollbar = false,
+        },
+        documentation = {
+          border = "rounded",
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG",
+          scrollbar = false,
+        }
+      },
+      formatting = {
+        format = function(entry, vim_item)
+        local KIND_ICONS = {
+          Tailwind = '󰹞󰹞󰹞󰹞󰹞󰹞󰹞󰹞',
+          Color = ' ',
+          Class = '🏘️',
+          Constant = '🐈',
+          Constructor = ' ',
+          Enum = ' ',
+          EnumMember = ' ',
+          Event = '󰏔 ',
+          Field = '󰇽',
+          File = '󰈙 ',
+          Folder = ' ',
+          Function = '󰏇 ',
+          Interface = ' ',
+          Keyword = '🔑',
+          Method = '🧬',
+          Module = '󰏭 ',
+          Operator = '󰏾 ',
+          Property = ' ',
+          Reference = ' ',
+          Snippet = '',
+          Struct = '',
+          Text = '🐧',
+          TypeParameter = ' ',
+          Unit = '',
+          Value = ' ',
+          Variable = '🐼'
+        }
+        if vim_item.kind == 'Color' and entry.completion_item.documentation then
+          local _, _, r, g, b =
+          ---@diagnostic disable-next-line: param-type-mismatch
+              string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
+
+          if r and g and b then
+            local color = string.format('%02x', r) .. string.format('%02x', g) .. string.format('%02x', b)
+            local group = 'Tw_' .. color
+
+            if vim.api.nvim_call_function('hlID', { group }) < 1 then
+              vim.api.nvim_command('highlight' .. ' ' .. group .. ' ' .. 'guifg=#' .. color)
+            end
+
+            vim_item.kind = KIND_ICONS.Tailwind
+            vim_item.kind_hl_group = group
+
+            return vim_item
+          end
+        end
+
+        vim_item.kind = KIND_ICONS[ vim_item.kind ] or vim_item.kind
+
+        return vim_item
+      end,
+      },
       snippet = {
         expand = function( args )
           luasnip.lsp_expand( args.body )
@@ -62,20 +129,8 @@ return {
         { name = 'luasnip'  },
         { name = 'emoji'    },
       }, {
-          { name = 'buffer' },
-        }),
-      formatting = {
-        format = require( 'lspkind' ).cmp_format({
-          mode = 'symbol',
-          maxwidth = 50,
-          ellipsis_char = '...',
-          before = function ( entry, vim_item )
-            -- vim_item.kind = require( 'lspkind' ).presets.default[ entry.kind ]
-            -- .. ' ' .. vim_item.kind
-            return vim_item
-          end
-        })
-      },
+        { name = 'buffer' },
+      }),
     })
     cmp.setup.filetype( 'gitcommit', {
       sources = cmp.config.sources({

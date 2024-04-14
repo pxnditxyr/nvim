@@ -3,7 +3,6 @@ return {
   tag = '0.1.5',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-file-browser.nvim',
     'kyazdani42/nvim-web-devicons',
   },
   config = function ()
@@ -12,26 +11,10 @@ return {
       defaults = {
         sorting_strategy = 'ascending',
         layout_config    = { prompt_position = 'top' },
-      },
-      extensions = {
-        file_browser = {
-          hijack_netrw = true,
-          grouped  = true,
-          hidden   = true,
-          mappings = {
-            [ 'i' ] = {
-              [ '<C-t>' ] = require 'telescope.actions'.select_tab
-            },
-            [ 'n' ] = {
-              [ '<C-t>' ] = require 'telescope.actions'.select_tab
-            }
-          },
-        },
+        winblend         = 20,
       },
     }
-
-    require( 'telescope' ).load_extension( 'file_browser' )
-
+    vim.api.nvim_set_hl( 0, 'TelescopeBorder', { bg = '#000000' } )
     vim.keymap.set( 'n', '<leader>ff', function()
       builtin.find_files({
         hidden = true,
@@ -39,6 +22,5 @@ return {
       })
     end, {} )
     vim.keymap.set( 'n', '<leader>fg', builtin.live_grep, {} )
-    vim.keymap.set( 'n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true } )
   end
 }
