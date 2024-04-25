@@ -128,7 +128,7 @@ return {
         },
       },
     })
-    vim.keymap.set( 'n', '<leader>o', '<CMD>Oil --float<CR>', { desc = 'Oil' } )
+    vim.keymap.set( 'n', '<leader>o', '<CMD>Oil<CR>', { desc = 'Oil' } )
     vim.keymap.set( 'n', '<leader>OE', '<CMD>Oil .env<CR>', { desc = 'Oil .env' } )
   end
 }
