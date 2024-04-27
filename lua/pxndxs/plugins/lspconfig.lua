@@ -2,9 +2,15 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     'williamboman/mason.nvim',
+    'folke/noice.nvim'
   },
   event = 'VeryLazy',
   config = function ()
+
+    vim.diagnostic.config {
+      float = { border = "rounded" },
+    }
+
     vim.keymap.set( 'n', '<space>e', vim.diagnostic.open_float )
     vim.keymap.set( 'n', '[d', vim.diagnostic.goto_prev )
     vim.keymap.set( 'n', ']d', vim.diagnostic.goto_next )
@@ -18,6 +24,7 @@ return {
     lspconfig.arduino_language_server.setup({})
     lspconfig.prismals.setup({})
     lspconfig.tailwindcss.setup({})
+    lspconfig.intelephense.setup({})
 
     lspconfig.lua_ls.setup({
       settings = {
@@ -30,6 +37,7 @@ return {
           },
           -- telemetry = { enable = false, },
         },
+
       },
     })
 
@@ -42,7 +50,7 @@ return {
         local opts = { buffer = ev.buf }
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', 'K', require("noice.lsp").hover, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
         vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
@@ -61,8 +69,8 @@ return {
 
     } )
 
-
-    require( 'mason' ).setup({
+    local mason = require( 'mason' )
+    mason.setup({
       ui = {
         icons = {
           package_installed = '✓',
@@ -71,5 +79,22 @@ return {
         }
       }
     })
+    local options = {
+      ensure_installed = {
+        'pyright',
+        'typescript-language-server',
+        'yaml-language-server',
+        'arduino-language-server',
+        'prisma-language-server',
+        'tailwindcss-language-server',
+        'intelephense',
+        'lua-language-server',
+      },
+      max_concurrent_installers = 10
+    }
+    mason.setup( options )
+    vim.api.nvim_create_user_command( 'MasonInstallAll', function()
+      vim.cmd( 'MasonInstall ' .. table.concat( options.ensure_installed, ' ' ) )
+    end, {} )
   end
 }
