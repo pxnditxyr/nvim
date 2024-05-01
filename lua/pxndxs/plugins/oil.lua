@@ -128,7 +128,13 @@ return {
         },
       },
     })
+    -- vim.keymap.set( 'n', '<leader>o', '<CMD>Oil<CR>', { desc = 'Oil' } )
     vim.keymap.set( 'n', '<leader>o', '<CMD>Oil<CR>', { desc = 'Oil' } )
+    vim.keymap.set('n', '<leader>os', function()
+      vim.cmd('vsplit')
+      vim.cmd('vertical resize 30')
+      vim.cmd('Oil')
+    end, { desc = 'Open Oil in Left Window' })
     vim.keymap.set( 'n', '<leader>OE', '<CMD>Oil .env<CR>', { desc = 'Oil .env' } )
   end
 }
