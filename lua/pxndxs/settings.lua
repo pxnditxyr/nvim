@@ -59,3 +59,5 @@ vim.opt.spelllang = 'en_us'
 
 --split new on right
 vim.opt.splitright = true
+
+vim.g.editorconfig = true
