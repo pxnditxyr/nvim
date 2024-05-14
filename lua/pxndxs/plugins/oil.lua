@@ -129,7 +129,7 @@ return {
       },
     })
     -- vim.keymap.set( 'n', '<leader>o', '<CMD>Oil<CR>', { desc = 'Oil' } )
-    vim.keymap.set( 'n', '<leader>o', '<CMD>Oil<CR>', { desc = 'Oil' } )
+    vim.keymap.set( 'n', '<leader>o', '<cmd>tab split | Oil<CR>', { desc = 'Oil' } )
     vim.keymap.set('n', '<leader>OS', function()
       vim.cmd('vsplit')
       vim.cmd('vertical resize 30')
