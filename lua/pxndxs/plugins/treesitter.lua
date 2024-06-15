@@ -17,9 +17,11 @@ return {
         javascript = '// %s',
       },
     })
+
     vim.g.skip_ts_commentstring_module = true
+
     configs.setup({
-      ensure_installed = { 'lua', 'vimdoc', 'vim', 'typescript', 'javascript', 'html', 'http', 'json', 'php' },
+      ensure_installed = { 'c', 'lua', 'vimdoc', 'vim', 'typescript', 'javascript', 'html', 'http', 'json', 'php', 'query' },
       ignore_install = {},
       sync_install = true,
       auto_install = true,
