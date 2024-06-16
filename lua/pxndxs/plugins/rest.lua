@@ -13,10 +13,7 @@ return {
       result_split_in_place = false,
       skip_ssl_verification = false,
       encode_url = true,
-      highlight = {
-        enabled = true,
-        timeout = 150,
-      },
+      highlight = { enabled = false },
       result = {
         show_url = true,
         show_curl_command = false,
