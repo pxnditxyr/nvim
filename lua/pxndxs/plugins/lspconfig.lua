@@ -12,8 +12,6 @@ return {
     }
 
     vim.keymap.set( 'n', '<space>e', vim.diagnostic.open_float )
-    vim.keymap.set( 'n', '[d', vim.diagnostic.goto_prev )
-    vim.keymap.set( 'n', ']d', vim.diagnostic.goto_next )
     vim.keymap.set( 'n', '<space>q', vim.diagnostic.setloclist )
 
     local lspconfig = require( 'lspconfig' )
@@ -25,6 +23,7 @@ return {
     lspconfig.prismals.setup({})
     lspconfig.tailwindcss.setup({})
     lspconfig.intelephense.setup({})
+    lspconfig.emmet_ls.setup({})
 
     lspconfig.lua_ls.setup({
       settings = {
@@ -90,6 +89,7 @@ return {
         'tailwindcss-language-server',
         'intelephense',
         'lua-language-server',
+        'emmet-ls',
       },
       max_concurrent_installers = 10
     }
