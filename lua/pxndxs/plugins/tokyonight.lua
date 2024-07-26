@@ -56,15 +56,15 @@ return {
         colors.red = '#ef4444'
         colors.red1 = '#dc2626'
         colors.git = {
-          change = '#6183bb',
-          add = '#449dab',
-          delete = '#914c54',
+          change = '#FDFD44',
+          add = '#9CFF2E',
+          delete = '#ef4444',
           conflict = '#bb7a61'
         }
         colors.gitSigns = {
           add = '#9CFF2E',
           change = '#FDFD44',
-          delete = '#E97777'
+          delete = '#ef4444'
         }
       end,
       -- on_highlights = function( highlights, colors ) end,

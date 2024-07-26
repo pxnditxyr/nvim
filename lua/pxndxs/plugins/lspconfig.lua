@@ -24,6 +24,7 @@ return {
     lspconfig.tailwindcss.setup({})
     lspconfig.intelephense.setup({})
     lspconfig.emmet_ls.setup({})
+    lspconfig.astro.setup({})
 
     lspconfig.lua_ls.setup({
       settings = {
@@ -90,6 +91,7 @@ return {
         'intelephense',
         'lua-language-server',
         'emmet-ls',
+        'astro-language-server',
       },
       max_concurrent_installers = 10
     }
