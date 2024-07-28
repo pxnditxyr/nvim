@@ -61,3 +61,6 @@ vim.opt.spelllang = 'en_us'
 vim.opt.splitright = true
 
 vim.g.editorconfig = true
+
+-- delete spaces and tabs at the end of the line when saving
+vim.cmd( [[autocmd BufWritePre * %s/\s\+$//e]] )
