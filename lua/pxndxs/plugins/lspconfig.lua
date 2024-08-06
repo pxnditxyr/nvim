@@ -12,6 +12,7 @@ return {
 
     vim.keymap.set( 'n', '<space>e', vim.diagnostic.open_float )
     vim.keymap.set( 'n', '<space>q', vim.diagnostic.setloclist )
+    vim.keymap.set( 'n', '<space>rl', '<cmd>LspRestart<CR>' )
 
     local lspconfig = require( 'lspconfig' )
 
